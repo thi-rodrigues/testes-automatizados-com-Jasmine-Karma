@@ -1,10 +1,10 @@
 import { UniqueIdsService } from "./unique-id.service";
 
-describe('UniqueIdsService', () => {
+describe(UniqueIdsService.name, () => {
 
-  it('#generatedUniqueIdWithPrefix should generate id when called with prefix', () => {
+  it(`${UniqueIdsService.prototype.generatedUniqueIdWithPrefix.name} should generate id when called with prefix`, () => {
     const service = new UniqueIdsService();
     const id = service.generatedUniqueIdWithPrefix('app');
-    expect(id).toContain('app-');
+    expect(id.startsWith('app-')).toBeTrue();
   });
 });
