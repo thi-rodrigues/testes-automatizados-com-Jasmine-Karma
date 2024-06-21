@@ -15,13 +15,13 @@ export class LikeWidgetComponent implements OnInit {
 
   public fonts = {
     faThumbsUp
-  }
+  };
 
   constructor(private uniqueIdsService: UniqueIdsService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (!this.id)
-      this.uniqueIdsService.generatedUniqueIdWithPrefix('like-widget')
+      this.id = this.uniqueIdsService.generatedUniqueIdWithPrefix('like-widget');
   }
 
   public like(): void {
